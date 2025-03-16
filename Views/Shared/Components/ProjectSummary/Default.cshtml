@@ -1,0 +1,54 @@
+@model IEnumerable<Comp2139Lab1.Areas.ProjectManagement.Models.Project>
+
+<div class="project-summary-component">
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info">
+            <i class="fas fa-info-circle me-2"></i>
+            No projects available.
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var project in Model)
+            {
+                <div class="col-md-@(Model.Count() == 1 ? "12" : "6") mb-4">
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">@project.Name</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <p class="card-text">@(project.Description ?? "No description available")</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="text-muted mb-2">
+                                        <strong>Status:</strong> 
+                                        <span class="badge @(project.Status == "Completed" ? "bg-success" : 
+                                                           project.Status == "In Progress" ? "bg-warning" : 
+                                                           "bg-info")">
+                                            @project.Status
+                                        </span>
+                                    </div>
+                                    <div class="text-muted mb-2">
+                                        <strong>Tasks:</strong> @project.Tasks.Count
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a asp-area="ProjectManagement" asp-controller="Projects" asp-action="Details" asp-route-id="@project.Id" class="btn btn-sm btn-info">
+                                <i class="fas fa-info-circle"></i> Details
+                            </a>
+                            <a asp-area="ProjectManagement" asp-controller="Projects" asp-action="Edit" asp-route-id="@project.Id" class="btn btn-sm btn-warning">
+                                <i class="fas fa-edit"></i> Edit
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div> 

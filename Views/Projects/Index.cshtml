@@ -1,0 +1,79 @@
+@model IEnumerable<Comp2139Lab1.Areas.ProjectManagement.Models.Project>
+
+@{
+    ViewData["Title"] = "Projects";
+    Layout = "_Layout";
+}
+
+<div class="container mt-4">
+    <div class="row mb-4">
+        <div class="col">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1>Projects</h1>
+                <a asp-area="ProjectManagement" asp-controller="Projects" asp-action="Create" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Create New Project
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mb-4">
+        <div class="col">
+            <form asp-action="Search" method="get" class="form-inline">
+                <div class="input-group w-100">
+                    <input type="text" name="searchString" class="form-control" placeholder="Search projects...">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-outline-primary">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info">
+            <i class="fas fa-info-circle me-2"></i>
+            No projects available. Create your first project to get started!
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var project in Model)
+            {
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">@project.Name</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>@(project.Description ?? "No description available")</p>
+                            <div class="mt-3">
+                                <span class="badge @(project.Status == "Completed" ? "bg-success" : 
+                                                  project.Status == "In Progress" ? "bg-warning" : 
+                                                  "bg-info")">
+                                    @project.Status
+                                </span>
+                                <span class="badge bg-secondary ms-2">@project.Tasks.Count Tasks</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a asp-area="ProjectManagement" asp-controller="Projects" asp-action="Details" asp-route-id="@project.Id" class="btn btn-sm btn-info">
+                                <i class="fas fa-info-circle"></i> Details
+                            </a>
+                            <a asp-area="ProjectManagement" asp-controller="Projects" asp-action="Edit" asp-route-id="@project.Id" class="btn btn-sm btn-warning">
+                                <i class="fas fa-edit"></i> Edit
+                            </a>
+                            <a asp-area="ProjectManagement" asp-controller="Projects" asp-action="Delete" asp-route-id="@project.Id" class="btn btn-sm btn-danger">
+                                <i class="fas fa-trash"></i> Delete
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div> 

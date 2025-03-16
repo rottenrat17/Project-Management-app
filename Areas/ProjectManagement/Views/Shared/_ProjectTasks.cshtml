@@ -1,0 +1,63 @@
+@model IEnumerable<ProjectTask>
+
+<div class="card">
+    <div class="card-header bg-info text-white">
+        <div class="d-flex justify-content-between align-items-center">
+            <h5 class="mb-0"><i class="fas fa-tasks me-2"></i>Project Tasks</h5>
+            <a asp-area="ProjectManagement" asp-controller="ProjectTask" asp-action="Create" asp-route-projectId="@ViewBag.ProjectId" class="btn btn-sm btn-light">
+                <i class="fas fa-plus"></i> Add Task
+            </a>
+        </div>
+    </div>
+    <div class="card-body">
+        @if (!Model.Any())
+        {
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle me-2"></i>
+                No tasks have been added to this project yet.
+            </div>
+        }
+        else
+        {
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var task in Model)
+                        {
+                            <tr>
+                                <td>@task.Title</td>
+                                <td>
+                                    <span class="badge @(task.Status == "Completed" ? "bg-success" : 
+                                                       task.Status == "In Progress" ? "bg-warning" : 
+                                                       "bg-info")">
+                                        @task.Status
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="btn-group btn-group-sm">
+                                        <a asp-area="ProjectManagement" asp-controller="ProjectTask" asp-action="Details" asp-route-id="@task.ProjectTaskId" class="btn btn-info">
+                                            <i class="fas fa-info-circle"></i>
+                                        </a>
+                                        <a asp-area="ProjectManagement" asp-controller="ProjectTask" asp-action="Edit" asp-route-id="@task.ProjectTaskId" class="btn btn-warning">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <a asp-area="ProjectManagement" asp-controller="ProjectTask" asp-action="Delete" asp-route-id="@task.ProjectTaskId" class="btn btn-danger">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+</div> 

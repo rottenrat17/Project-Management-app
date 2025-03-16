@@ -1,0 +1,37 @@
+@model ProjectTask
+
+<div class="card mb-3">
+    <div class="card-header @(Model.Status == "Completed" ? "bg-success" : 
+                             Model.Status == "In Progress" ? "bg-warning" : 
+                             "bg-info") text-white">
+        <h5 class="mb-0">@Model.Title</h5>
+    </div>
+    <div class="card-body">
+        <p class="card-text">@(Model.Description ?? "No description available")</p>
+        <div class="text-muted">
+            <strong>Status:</strong> 
+            <span class="badge @(Model.Status == "Completed" ? "bg-success" : 
+                                Model.Status == "In Progress" ? "bg-warning" : 
+                                "bg-info")">
+                @Model.Status
+            </span>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="d-flex justify-content-between">
+            <div>
+                <a asp-area="ProjectManagement" asp-controller="ProjectTask" asp-action="Details" asp-route-id="@Model.ProjectTaskId" class="btn btn-sm btn-info">
+                    <i class="fas fa-info-circle"></i> Details
+                </a>
+                <a asp-area="ProjectManagement" asp-controller="ProjectTask" asp-action="Edit" asp-route-id="@Model.ProjectTaskId" class="btn btn-sm btn-warning">
+                    <i class="fas fa-edit"></i> Edit
+                </a>
+            </div>
+            <div>
+                <a asp-area="ProjectManagement" asp-controller="Projects" asp-action="Details" asp-route-id="@Model.ProjectId" class="btn btn-sm btn-secondary">
+                    <i class="fas fa-project-diagram"></i> Project
+                </a>
+            </div>
+        </div>
+    </div>
+</div> 

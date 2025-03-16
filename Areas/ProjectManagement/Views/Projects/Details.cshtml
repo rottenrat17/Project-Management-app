@@ -1,0 +1,63 @@
+@model Project
+
+@{
+    ViewData["Title"] = "Project Details";
+    ViewBag.ProjectId = Model.Id;
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Project Details</h1>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">
+            <i class="fas fa-edit"></i> Edit
+        </a>
+        <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger">
+            <i class="fas fa-trash"></i> Delete
+        </a>
+        <a asp-action="Index" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> Back to List
+        </a>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">@Model.Name</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h6 class="text-muted">Description</h6>
+                        <p>@(Model.Description ?? "No description available")</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <h6 class="text-muted">Status</h6>
+                            <span class="badge @(Model.Status == "Completed" ? "bg-success" : 
+                                               Model.Status == "In Progress" ? "bg-warning" : 
+                                               "bg-info")">
+                                @Model.Status
+                            </span>
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="text-muted">Start Date</h6>
+                            <p>@Model.StartDate.ToShortDateString()</p>
+                        </div>
+                        <div>
+                            <h6 class="text-muted">End Date</h6>
+                            <p>@Model.EndDate.ToShortDateString()</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <partial name="_ProjectTasks" model="Model.Tasks" />
+    </div>
+</div> 

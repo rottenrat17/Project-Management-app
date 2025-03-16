@@ -1,0 +1,48 @@
+@model Project
+
+<div class="card mb-3">
+    <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">@Model.Name</h5>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-8">
+                <p class="card-text">@(Model.Description ?? "No description available")</p>
+            </div>
+            <div class="col-md-4">
+                <div class="text-muted mb-2">
+                    <strong>Status:</strong> 
+                    <span class="badge @(Model.Status == "Completed" ? "bg-success" : 
+                                        Model.Status == "In Progress" ? "bg-warning" : 
+                                        "bg-info")">
+                        @Model.Status
+                    </span>
+                </div>
+                <div class="text-muted mb-2">
+                    <strong>Start Date:</strong> @Model.StartDate.ToShortDateString()
+                </div>
+                <div class="text-muted">
+                    <strong>End Date:</strong> @Model.EndDate.ToShortDateString()
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="d-flex justify-content-between">
+            <div>
+                <a asp-area="ProjectManagement" asp-controller="Projects" asp-action="Details" asp-route-id="@Model.Id" class="btn btn-sm btn-info">
+                    <i class="fas fa-info-circle"></i> Details
+                </a>
+                <a asp-area="ProjectManagement" asp-controller="Projects" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-warning">
+                    <i class="fas fa-edit"></i> Edit
+                </a>
+                <a asp-area="ProjectManagement" asp-controller="Projects" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-sm btn-danger">
+                    <i class="fas fa-trash"></i> Delete
+                </a>
+            </div>
+            <div>
+                <span class="badge bg-secondary">@Model.Tasks.Count Tasks</span>
+            </div>
+        </div>
+    </div>
+</div> 

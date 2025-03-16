@@ -1,0 +1,59 @@
+@model IEnumerable<Project>
+
+@{
+    ViewData["Title"] = "Projects";
+    bool isSearching = ViewData["IsSearching"] != null && ViewData["IsSearching"] is bool searchFlag && searchFlag;
+    string searchString = ViewData["CurrentFilter"] as string;
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>@(isSearching ? "Search Results" : "Projects")</h1>
+    <a asp-action="Create" class="btn btn-primary">
+        <i class="fas fa-plus"></i> Create New Project
+    </a>
+</div>
+
+@if (isSearching)
+{
+    <div class="alert alert-info mb-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <i class="fas fa-search me-2"></i>
+                Showing results for: <strong>@searchString</strong>
+            </div>
+            <a asp-action="Index" class="btn btn-sm btn-outline-secondary">
+                <i class="fas fa-times"></i> Clear Search
+            </a>
+        </div>
+    </div>
+}
+else
+{
+    <div class="mb-4">
+        <form asp-action="Search" method="get" class="input-group">
+            <input type="text" name="searchString" class="form-control" placeholder="Search projects..." value="@searchString" />
+            <button type="submit" class="btn btn-outline-primary">
+                <i class="fas fa-search"></i> Search
+            </button>
+        </form>
+    </div>
+}
+
+@if (!Model.Any())
+{
+    <div class="alert alert-warning">
+        <i class="fas fa-exclamation-triangle me-2"></i>
+        @(isSearching ? "No projects found matching your search criteria." : "No projects have been created yet.")
+    </div>
+}
+else
+{
+    <div class="row">
+        @foreach (var project in Model)
+        {
+            <div class="col-md-6 mb-4">
+                <partial name="_ProjectSummary" model="project" />
+            </div>
+        }
+    </div>
+}

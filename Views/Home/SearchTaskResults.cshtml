@@ -1,0 +1,56 @@
+@model IEnumerable<Comp2139Lab1.Areas.ProjectManagement.Models.ProjectTask>
+
+@{
+    ViewData["Title"] = "Search Results";
+    var searchString = ViewData["SearchString"] as string;
+}
+
+<h1>Task Search Results</h1>
+
+<div class="mb-3">
+    <h4>Search results for: <span class="text-primary">@searchString</span></h4>
+</div>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info" role="alert">
+        No tasks found matching your search criteria: <strong>@searchString</strong>
+    </div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Title)</th>
+                    <th>@Html.DisplayNameFor(model => model.Description)</th>
+                    <th>@Html.DisplayNameFor(model => model.Status)</th>
+                    <th>Project</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var task in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => task.Title)</td>
+                        <td>@Html.DisplayFor(modelItem => task.Description)</td>
+                        <td>@Html.DisplayFor(modelItem => task.Status)</td>
+                        <td>@Html.DisplayFor(modelItem => task.Project.Name)</td>
+                        <td>
+                            <a asp-controller="ProjectTask" asp-action="Details" asp-route-id="@task.ProjectTaskId" class="btn btn-info btn-sm">Details</a>
+                            <a asp-controller="ProjectTask" asp-action="Edit" asp-route-id="@task.ProjectTaskId" class="btn btn-warning btn-sm">Edit</a>
+                            <a asp-controller="Projects" asp-action="Details" asp-route-id="@task.ProjectId" class="btn btn-primary btn-sm">View Project</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
+<div>
+    <a asp-controller="Projects" asp-action="Index" class="btn btn-primary">View All Projects</a>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Back to Home</a>
+</div> 

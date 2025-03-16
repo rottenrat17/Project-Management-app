@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container-fluid">
+        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-tasks me-2"></i>GBC Project Management</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="ProjectManagement" asp-controller="Projects" asp-action="Index">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </li>
+            </ul>
+            <form class="d-flex" asp-area="" asp-controller="Home" asp-action="Search" method="get">
+                <div class="input-group">
+                    <select name="searchType" class="form-select" style="max-width: 120px;">
+                        <option value="Project">Projects</option>
+                        <option value="Task">Tasks</option>
+                    </select>
+                    <input class="form-control" type="search" name="searchString" placeholder="Search..." aria-label="Search">
+                    <button class="btn btn-outline-primary" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</nav> 

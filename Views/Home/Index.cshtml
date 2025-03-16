@@ -1,0 +1,63 @@
+﻿@model List<Comp2139Lab1.Areas.ProjectManagement.Models.Project>
+@inject Comp2139Lab1.Data.ApplicationDbContext DbContext
+
+@{
+    ViewData["Title"] = "Home Page";
+    var recentProjects = DbContext.Projects.OrderByDescending(p => p.Id).Take(3).ToList();
+    var recentTasks = DbContext.ProjectTasks.OrderByDescending(t => t.ProjectTaskId).Take(3).ToList();
+}
+
+<div class="text-center mb-5">
+    <h1 class="display-4">Welcome to GBC Project Management</h1>
+    <p class="lead">A simple project management system for tracking projects and tasks.</p>
+    <div class="mt-4">
+        <a asp-area="ProjectManagement" asp-controller="Projects" asp-action="Create" class="btn btn-primary btn-lg">
+            <i class="fas fa-plus-circle"></i> Create New Project
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0"><i class="fas fa-project-diagram me-2"></i>Recent Projects</h5>
+                    <a asp-area="ProjectManagement" asp-controller="Projects" asp-action="Index" class="btn btn-sm btn-light">
+                        View All
+                    </a>
+                </div>
+            </div>
+            <div class="card-body">
+                @await Component.InvokeAsync("ProjectSummary")
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card mb-4">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0"><i class="fas fa-info-circle me-2"></i>About This Application</h5>
+            </div>
+            <div class="card-body">
+                <p>This project management application allows you to:</p>
+                <ul>
+                    <li>Create and manage projects</li>
+                    <li>Add tasks to projects</li>
+                    <li>Track project and task status</li>
+                    <li>Search for projects and tasks</li>
+                </ul>
+                <p>The application demonstrates the use of:</p>
+                <ul>
+                    <li>ASP.NET Core MVC with Areas</li>
+                    <li>Entity Framework Core</li>
+                    <li>Partial Views</li>
+                    <li>View Components</li>
+                    <li>Advanced Razor syntax</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

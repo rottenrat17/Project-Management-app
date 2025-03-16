@@ -1,0 +1,161 @@
+is_global = true
+build_property.TargetFramework = net9.0
+build_property.TargetFramework = net9.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Comp2139Lab1
+build_property.RootNamespace = Comp2139Lab1
+build_property.ProjectDir = C:\COMP2139_ProjectManagement\Comp2139Lab1\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\COMP2139_ProjectManagement\Comp2139Lab1
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Areas/ProjectManagement/Views/Projects/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcUHJvamVjdHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Areas/ProjectManagement/Views/Projects/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcUHJvamVjdHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Areas/ProjectManagement/Views/Projects/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcUHJvamVjdHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Areas/ProjectManagement/Views/Projects/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcUHJvamVjdHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Areas/ProjectManagement/Views/Projects/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcUHJvamVjdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Areas/ProjectManagement/Views/Projects/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcUHJvamVjdHNcU2VhcmNoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Areas/ProjectManagement/Views/ProjectTask/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcUHJvamVjdFRhc2tcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Areas/ProjectManagement/Views/ProjectTask/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcUHJvamVjdFRhc2tcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Areas/ProjectManagement/Views/ProjectTask/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcUHJvamVjdFRhc2tcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Areas/ProjectManagement/Views/ProjectTask/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcUHJvamVjdFRhc2tcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Areas/ProjectManagement/Views/ProjectTask/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcUHJvamVjdFRhc2tcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Areas/ProjectManagement/Views/ProjectTask/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcUHJvamVjdFRhc2tcU2VhcmNoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Areas/ProjectManagement/Views/Shared/_ProjectSummary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcU2hhcmVkXF9Qcm9qZWN0U3VtbWFyeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Areas/ProjectManagement/Views/Shared/_ProjectTasks.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcU2hhcmVkXF9Qcm9qZWN0VGFza3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Areas/ProjectManagement/Views/Shared/_TaskSummary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcU2hhcmVkXF9UYXNrU3VtbWFyeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Areas/ProjectManagement/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Areas/ProjectManagement/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Views/Home/SearchResults.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZWFyY2hSZXN1bHRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Views/Home/SearchTaskResults.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZWFyY2hUYXNrUmVzdWx0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Views/Projects/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Views/Projects/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcU2VhcmNoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Views/Shared/Components/ProjectSummary/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUHJvamVjdFN1bW1hcnlcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Views/Shared/NotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE5vdEZvdW5kLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Views/Shared/_Footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Gb290ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Views/Shared/_Header.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IZWFkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Views/Shared/_Navbar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9OYXZiYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/COMP2139_ProjectManagement/Comp2139Lab1/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-v8e5fczw81
