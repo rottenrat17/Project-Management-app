@@ -154,7 +154,7 @@ namespace Comp2139Lab1.Areas.ProjectManagement.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProjectExists(project.Id))
+                    if (!await ProjectExists(project.Id))
                     {
                         return NotFound();
                     }
@@ -212,9 +212,9 @@ namespace Comp2139Lab1.Areas.ProjectManagement.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ProjectExists(int id)
+        private async Task<bool> ProjectExists(int id)
         {
-            return _context.Projects.Any(e => e.Id == id);
+            return await _context.Projects.AnyAsync(e => e.Id == id);
         }
     }
 } 

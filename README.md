@@ -6,7 +6,9 @@ This is a fork of the Project Management application by rottenrat17. The applica
 
 - Project management with CRUD operations
 - Task tracking within projects
+- Project comments with AJAX functionality
 - Search functionality for projects and tasks
+- Asynchronous programming for better performance
 - Area-based architecture for modular organization
 
 ## Technologies Used
@@ -14,6 +16,7 @@ This is a fork of the Project Management application by rottenrat17. The applica
 - ASP.NET Core 9.0
 - Entity Framework Core
 - PostgreSQL Database
+- jQuery and AJAX for dynamic content
 - Bootstrap for UI
 
 ## Getting Started
@@ -30,6 +33,23 @@ This is a fork of the Project Management application by rottenrat17. The applica
 3. Run the migrations to create the database: `dotnet ef database update`
 4. Run the application: `dotnet run`
 
-## Future Lab Enhancements
+## Lab 9 Enhancements
+
+This repository includes the following enhancements from Lab 9:
+
+1. **Asynchronous Programming**:
+   - Updated controller methods to use async/await pattern
+   - Improved application responsiveness with asynchronous database operations
+
+2. **AJAX Enhancements**:
+   - Added ProjectComments feature with AJAX functionality
+   - Dynamic comment loading and posting without page refresh
+   - Real-time user interaction with the application
+
+3. **Styling Improvements**:
+   - Enhanced UI for project details page
+   - Improved comment section styling with Bootstrap
+
+## Future Enhancements
 
 This repository will be updated with additional features and improvements as part of ongoing lab work. 

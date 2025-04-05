@@ -280,9 +280,9 @@ namespace Comp2139Lab1.Areas.ProjectManagement.Controllers
             return RedirectToAction("Details", "Projects", new { area = "ProjectManagement", id = projectId });
         }
 
-        private bool ProjectTaskExists(int id)
+        private async Task<bool> ProjectTaskExists(int id)
         {
-            return _context.ProjectTasks.Any(e => e.ProjectTaskId == id);
+            return await _context.ProjectTasks.AnyAsync(e => e.ProjectTaskId == id);
         }
     }
 } 
