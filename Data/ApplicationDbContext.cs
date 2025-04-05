@@ -1,11 +1,13 @@
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Comp2139Lab1.Areas.ProjectManagement.Models;
 using Comp2139Lab1.Models;
 using System;
+using Microsoft.AspNetCore.Identity;
 
 namespace Comp2139Lab1.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<IdentityUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

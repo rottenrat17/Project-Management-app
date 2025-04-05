@@ -9,6 +9,9 @@ using System;
 using Microsoft.AspNetCore.Http;
 using System.Threading.Tasks;
 using Npgsql;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using Comp2139Lab1.Services;
 
 namespace Comp2139Lab1
 {
@@ -31,7 +34,50 @@ namespace Comp2139Lab1
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"),
                     npgsqlOptions => npgsqlOptions.EnableRetryOnFailure()));
 
+            // Add Identity services
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
+
+            // Configure Identity options
+            services.Configure<IdentityOptions>(options =>
+            {
+                // Password settings
+                options.Password.RequireDigit = true;
+                options.Password.RequireLowercase = true;
+                options.Password.RequireNonAlphanumeric = true;
+                options.Password.RequireUppercase = true;
+                options.Password.RequiredLength = 6;
+                options.Password.RequiredUniqueChars = 1;
+
+                // Lockout settings
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+                options.Lockout.MaxFailedAccessAttempts = 5;
+                options.Lockout.AllowedForNewUsers = true;
+
+                // User settings
+                options.User.AllowedUserNameCharacters =
+                    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
+                options.User.RequireUniqueEmail = true;
+                options.SignIn.RequireConfirmedEmail = true;
+            });
+
+            // Configure cookie settings
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+                options.LoginPath = "/Identity/Account/Login";
+                options.AccessDeniedPath = "/Identity/Account/AccessDenied";
+                options.SlidingExpiration = true;
+            });
+
+            // Configure email settings
+            services.Configure<EmailSettings>(Configuration.GetSection("EmailSettings"));
+            services.AddTransient<IEmailSender, EmailSender>();
+
             services.AddControllersWithViews();
+            services.AddRazorPages();
             
             // Test the database connection separately - not in the service configuration
             try
@@ -75,6 +121,8 @@ namespace Comp2139Lab1
 
             app.UseRouting();
 
+            // Add Authentication middleware before Authorization
+            app.UseAuthentication();
             app.UseAuthorization();
 
             // Add custom 404 error handling
@@ -92,6 +140,9 @@ namespace Comp2139Lab1
 
             app.UseEndpoints(endpoints =>
             {
+                // Add support for Razor Pages (needed for Identity UI)
+                endpoints.MapRazorPages();
+                
                 // Add area routing support
                 endpoints.MapControllerRoute(
                     name: "areas",
